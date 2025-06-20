@@ -1,15 +1,17 @@
 # WebWork
-Checks each site URL in your CSV to determine if it’s searchable for roles matching your criteria (Senior/Business Analyst, Data Insights, AI-related; Remote / Portland-based / U.S. remote).
+#Checks each site URL in your CSV to determine if it’s searchable for roles matching your criteria (Senior/Business Analyst, Data Insights, AI-related; Remote / Portland-based / U.S. remote).
 
-Appends the result (“Yes” if searchable, “No” if not) into a new column called Connect.
+#Appends the result (“Yes” if searchable, “No” if not) into a new column called Connect.
 ##Web Crawler for Job Sites
+
+%pip install requests BeautifulSoup4
 
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
 # Load the CSV
-df = pd.read_csv("C:\Users\egan0\OneDrive\Documents\Resume 2025\Jobs folder\updated_job_websites.csv")
+df = pd.read_csv(r"C:\Users\egan0\OneDrive\Documents\Resume 2025\Jobs folder\updated_job_websites.csv")
 
 # Function to test if a site returns search results
 def test_site_search(url):
